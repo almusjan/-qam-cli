@@ -1,0 +1,33 @@
+{
+  "name": "@qam/cli",
+  "version": "1.1.0",
+  "description": "a simple cli to help me generate projects",
+  "type": "module",
+  "main": "./bin/index.js",
+  "bin": {
+    "qam": "bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almusjan/-qam-cli.git"
+  },
+  "author": "almusjan.q",
+  "keywords": [
+    "cli"
+  ],
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "figlet": "^1.7.0",
+    "inquirer": "^9.2.19",
+    "ora": "^8.0.1"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/almusjan/-qam-cli/issues"
+  },
+  "homepage": "https://github.com/almusjan/-qam-cli#readme"
+}
