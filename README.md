@@ -34,7 +34,6 @@ For more details information on commands, run `qam --help`.
 [//]: # (This project is licensed ...)
 
 <hr>
-Tutorial
 Simple Tutorial by <a href="https://medium.com/nmc-techblog/building-a-cli-with-node-js-in-2024-c278802a3ef5">Evgeni Gomziakov</a>.
 
 <a href="https://github.com/egmzy/my-node-cli">Full examples file</a>
