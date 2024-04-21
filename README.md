@@ -1,4 +1,4 @@
-# @QAM/CLI
+# QAM CLI
 a simple cli to help me generate projects.
 
 ## Installation
@@ -13,12 +13,15 @@ To start using @QAM/CLI, run:
     qam --help
 ```
 
+### Required Actions
+- `Github authentication in CMD`
+
 ### Commands
 - `qam create your_project_name`: It will create new project.
 
-## Types
-- `create project with tailwindcss`
-- `create project with tailwindcss and webpack`
+#### Types
+- `create project with tailwindcss`: create html project with tailwindcss
+- `create project with tailwindcss and webpack`: create html project with tailwindcss and webpack
 
 For more details information on commands, run `qam --help`.
 

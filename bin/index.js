@@ -7,14 +7,14 @@ import figlet from "figlet";
 import {createTailwindCommand} from "../src/commands/create-tailwind.command.js";
 import {createTailwindWithWebpackCommand} from "../src/commands/create-tailwind-with-webpack.command.js";
 
-const commands = {
+const creationCommands = {
     "create tailwind project": createTailwindCommand,
     "create tailwind project with webpack": createTailwindWithWebpackCommand
 }
 
-program.version("1.0.0").description("My personal cli");
+program.version("QAM CLI: 1.1.0 \nNode: 20.11.1 \nPackage Manager: npm 10.2.4").description("github authentication is required for this version!");
 
-console.log(chalk.yellowBright(figlet.textSync('QAM CLI', {horizontalLayout: 'full'})))
+console.log(chalk.redBright(figlet.textSync('QAM CLI', {horizontalLayout: 'full'})))
 
 program.command("create <name>").description("create new project.").action((name) => {
     inquirer.prompt(
@@ -23,11 +23,11 @@ program.command("create <name>").description("create new project.").action((name
                 type: 'list',
                 name: 'selectedCmd',
                 message: 'Choose creation type: ',
-                choices: Object.keys(commands)
+                choices: Object.keys(creationCommands)
             }
         ]
     ).then((res) => {
-        const command = commands[res.selectedCmd];
+        const command = creationCommands[res.selectedCmd];
         if(command) {
             command(name);
         }else {
