@@ -12,7 +12,7 @@ const creationCommands = {
     "create tailwind project with webpack": createTailwindWithWebpackCommand
 }
 
-program.version("QAM CLI: 1.1.0 \nNode: 20.11.1 \nPackage Manager: npm 10.2.4").description("github authentication is required for this version!");
+program.version("QAM CLI: 1.1.2 \nNode: 20.11.1 \nPackage Manager: npm 10.2.4").description("github authentication is required for this version!");
 
 console.log(chalk.redBright(figlet.textSync('QAM CLI', {horizontalLayout: 'full'})))
 
