@@ -21,7 +21,7 @@ To start using @QAM/CLI, run:
     - Templates
       - `Vanilla`: create html project with tailwindcss.
       - `Webpack`: create html project with tailwindcss and webpack.
-      - `Angular`: create html project with tailwindcss and angular.
+      - `Angular`: create angular project with tailwindcss.
 
 For more details information on commands, run `qam --help`.
 
