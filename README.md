@@ -13,15 +13,12 @@ To start using @QAM/CLI, run:
     qam --help
 ```
 
-### Required Actions
-- `Github authentication in CMD`
-
 ### Commands
-1. `qam create-tailwind your_project_name`: It will create new tailwind project.
+1. `qam create-tailwind <name>`: It will create new tailwind project.
     - Templates
-      - `Vanilla`: create html project with tailwindcss.
-      - `Webpack`: create html project with tailwindcss and webpack.
-      - `Angular`: create angular project with tailwindcss.
+      - `Vanilla`: Setup html project with tailwindcss.
+      - `Django`: Setup django project with virtualenv and tailwindcss.
+      - `Angular`: Setup angular project with tailwindcss.
 
 For more details information on commands, run `qam --help`.
 
@@ -35,6 +32,6 @@ For more details information on commands, run `qam --help`.
 
 <hr>
 
-Simple Tutorial by <a href="https://medium.com/nmc-techblog/building-a-cli-with-node-js-in-2024-c278802a3ef5">Evgeni Gomziakov</a>.
+Tutorial by <a href="https://medium.com/nmc-techblog/building-a-cli-with-node-js-in-2024-c278802a3ef5">Evgeni Gomziakov</a>.
 
 <a href="https://github.com/egmzy/my-node-cli">Full examples file</a>

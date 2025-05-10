@@ -1,46 +1,24 @@
 #!/usr/bin/env node
-
+global.__dirname = import.meta.dirname
 import {program} from "commander";
 import chalk from "chalk";
-import inquirer from "inquirer";
-import figlet from "figlet";
-import {createTailwindCommand} from "../src/commands/create-tailwind/create-tailwind.command.js";
-import {createTailwindWithWebpackCommand} from "../src/commands/create-tailwind/create-tailwind-with-webpack.command.js";
-import {createTailwindWithAngularCommand} from "../src/commands/create-tailwind/create-tailwind-with-angular.command.js";
+import figlet from "figlet"
+import {createVanillaTemplate} from "../commands/create-tailwind/create-vanilla-template.js";
+import {createDjangoTemplate} from "../commands/create-tailwind/create-django-template.js";
+import {createAngularTemplate} from "../commands/create-tailwind/create-angular-template.js";
+import {choice_command_handler} from "../commands/handlers/choice_command_handler.js";
 
+program.name('QAM CLI').version("QAM CLI: 1.2.1\nNode: 22.11.0\nNPM: 10.9.1", "-v, --version").description("a simple cli to help me generate projects.");
+
+console.log(chalk.redBright(figlet.textSync("QAM CLI", {horizontalLayout: "full"})));
+
+// tailwind creation command start
 const creationCommands = {
-    "Vanilla": createTailwindCommand,
-    "Webpack": createTailwindWithWebpackCommand,
-    "Angular": createTailwindWithAngularCommand
+    "Vanilla": createVanillaTemplate,
+    "Angular": createAngularTemplate,
+    "Django": createDjangoTemplate
 }
+choice_command_handler(program, "create-tailwind <name>", "create new tailwind project.", creationCommands);
+// tailwind creation command end
 
-program.version("QAM CLI: 1.1.3 \nNode: 20.11.1 \nPackage Manager: npm 10.2.4").description("github authentication is required for this version!");
-
-console.log(chalk.redBright(figlet.textSync('QAM CLI', {horizontalLayout: 'full'})))
-
-/**
- * Create tailwind project command
- */
-program.command("create-tailwind <name>").description("create new tailwind project.").action((name) => {
-    inquirer.prompt(
-        [
-            {
-                type: 'list',
-                name: 'selectedCmd',
-                message: 'Choose your UI template: ',
-                choices: Object.keys(creationCommands)
-            }
-        ]
-    ).then((res) => {
-        const command = creationCommands[res.selectedCmd];
-        if(command) {
-            command(name, res.selectedCmd);
-        }else {
-            console.log(
-              chalk.redBright("Invalid Selection!")
-            );
-        }
-    });
-});
-
-program.parse(program.argv);
+program.parse(program.argv)
